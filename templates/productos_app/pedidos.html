@@ -1,0 +1,39 @@
+{% extends "base/base.html" %}
+{% load staticfiles %}
+
+
+	{% block titulo %}
+		<title>Pedidos</title>
+	{% endblock titulo %}
+	
+	
+	{% block contenido %}
+		<div class="container" style="width: 1000px" align="center">
+			<h1 align="center" style="padding-top: 30px">Pedidos Realizados hasta el momento</h1><br>
+			<table class="table" width="900px">
+			  <thead>
+			    <tr>
+			      <th scope="col">Nombre Producto</th>
+			      <th scope="col">Precio Producto</th>
+			      <th scope="col">Nombre Cliente</th>
+			      <th scope="col">Tipo Pedido</th>
+			      <th scope="col">Cantidad Pedido</th>
+			      <th scope="col">Precio Pedido</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			  {% for pedido in pedidos  %}
+			  	<tr>
+			      <td>{{pedido.producto.nombre}}</td>
+			      <td>{{pedido.producto.precio}}</td>
+			      <td>{{pedido.nombre_cliente}}</td>
+			      <td>{{pedido.tipo}}</td>
+			      <td>{{pedido.cantidad}}</td>
+			      <td>{{pedido.precio}}</td>
+			    </tr>  	
+			  {% endfor %}
+			  </tbody>
+			</table><br><br>
+			<a href="/" class="btn btn-secondary">Regresar</a>
+		</div>
+	{% endblock contenido %}

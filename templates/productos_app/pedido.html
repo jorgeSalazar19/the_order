@@ -1,0 +1,54 @@
+{% extends "base/base.html" %}
+{% load staticfiles %}
+
+
+	{% block titulo %}
+		<title>Pedido</title>
+	{% endblock titulo %}
+	
+	
+	{% block contenido %}
+		{% if flag %}
+			<div class="container" align="center" style="padding-top: 50px">
+				<h4>Gracias por realizar su pedido!</h4><br>
+				<a href="{% url 'Productos:visualizar' %}" class="btn btn-secondary">Visualizar Productos</a>
+				<a href="/" class="btn btn-secondary">ir a inicio</a>
+			</div>
+
+		{% else %}
+			<div class="container" align="left">
+				<form method="POST">{% csrf_token %}
+					<div class="form-group container" align="center" style="padding-top: 30px"><br>
+						<h1>Realizar tu pedido</h1><br>
+						<div class="row">
+							<div class="col" align="center">
+								<img src="{{producto.imagen.url}}" class="rounded" height="200">
+							</div>
+							<div class="col" align="left">
+								<label for="nombre_id" class="text-left">Nombre Producto</label>
+								<input class="form-control" type="text" value="{{producto.nombre}}" readonly id="nombre_id"><br>
+								<label for="nombre_id">Descripción Producto</label>
+								<input class="form-control" type="text" value="{{producto.descripcion}}" readonly=""><br>
+								<label for="nombre_id">Precio Producto</label>
+								<input class="form-control" type="text" value="c/u {{producto.precio}}" readonly><br>
+								<label for="nombre_id">Nombre Cliente</label>
+								<input class="form-control" type="text" name="nombre_cliente" placeholder="nombre cliente"><br>
+								<label for="nombre_id">Cantidad Producto</label>
+								<input class="form-control" type="number" name="cantidad" required placeholder="cantidad"><br>
+								<input value="{{producto.id}}" hidden name="id_producto">
+								<label for="nombre_id">Tipo Pedido</label>
+								<select class="form-control" name="tipo">
+							      <option>Para llevar</option>
+							      <option>Para Consumir en el sitio</option>
+							    </select><br>
+							    <label for="nombre_id">Observaciones Pedido</label>
+								<input class="form-control" type="text-area" name="observaciones" required placeholder="observaciones adicionales"><br>
+								<button type="submit" class="btn btn-primary">Enviar Pedido</button>
+								<a href="{% url 'Productos:visualizar' %}" class="btn btn-secondary">Regresar</a>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>	
+		{% endif %}
+	{% endblock contenido %}

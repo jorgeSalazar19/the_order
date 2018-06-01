@@ -1,0 +1,14 @@
+{% extends "base/base.html" %}
+{% load staticfiles %}
+
+	{% block titulo %}
+		<title>index the order</title>
+	{% endblock titulo %}
+	
+	{% block contenido %}
+		<div class="container" align="center" style="padding-top: 50px">
+			<h1>Binevenido a la app the order</h1><br><br>
+			<a class="btn btn-primary" href="{% url 'Productos:visualizar' %}">Tomar Pedido</a>
+		</div>
+	{% endblock contenido %}
+

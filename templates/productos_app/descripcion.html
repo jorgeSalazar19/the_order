@@ -1,0 +1,18 @@
+{% extends "base/base.html" %}
+{% load staticfiles %}
+
+	{% block titulo %}
+		<title>descripcion producto</title>
+	{% endblock titulo %}
+	
+	{% block contenido %}
+		<div class="container" align="center" style="padding-top: 50px">
+			<h1>Producto</h1><br><br>
+			<a title="imagen_link" href="{% url 'Productos:descripcion' producto.id %}"><img src="{{producto.imagen.url}}" class="rounded" height="100" width="150" alt="imagen_link"></a>
+			<h5 class="lead">Nombre: {{producto.nombre}}</h5>
+			<h5 class="lead">Descripción: {{producto.descripcion}}</h5>
+			<h5 class="lead">Precio: {{producto.precio}}</h5><br>
+			<a href="{% url 'Productos:pedido' producto.id %}" class="btn btn-primary">Realizar Pedido</a>
+			<a href="{% url 'Productos:visualizar' %}" class="btn btn-secondary">Regresar</a>
+		</div>
+	{% endblock contenido %}
