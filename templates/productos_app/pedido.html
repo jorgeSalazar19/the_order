@@ -11,7 +11,7 @@
 		{% if flag %}
 			<div class="container" align="center" style="padding-top: 50px">
 				<h4>Gracias por realizar su pedido!</h4><br>
-				<a href="{% url 'Productos:visualizar' %}" class="btn btn-secondary">Visualizar Productos</a>
+				<a href="{% url 'Restaurante:visualizar' restaurante.id %}" class="btn btn-secondary">Visualizar Productos</a>
 				<a href="/" class="btn btn-secondary">ir a inicio</a>
 			</div>
 
@@ -44,7 +44,7 @@
 							    <label for="nombre_id">Observaciones Pedido</label>
 								<input class="form-control" type="text-area" name="observaciones" required placeholder="observaciones adicionales"><br>
 								<button type="submit" class="btn btn-primary">Enviar Pedido</button>
-								<a href="{% url 'Productos:visualizar' %}" class="btn btn-secondary">Regresar</a>
+								<a href="{% url 'Restaurante:visualizar' restaurante.id %}" class="btn btn-secondary">Regresar</a>
 							</div>
 						</div>
 					</div>

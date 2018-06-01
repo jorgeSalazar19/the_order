@@ -10,14 +10,14 @@
 		<div class="container border border-dark" align="left" style="width: 600px; height: 350px"><br><br>
 			<div class="row">
 				<div class="col">
-					<a title="imagen_link" href="{% url 'Productos:descripcion' producto.id %}"><img src="{{producto.imagen.url}}" class="rounded" height="200" width="250" alt="imagen_link"></a>
+					<a title="imagen_link" href="{% url 'Restaurante:descripcion' restaurante.id producto.id %}"><img src="{{producto.imagen.url}}" class="rounded" height="200" width="250" alt="imagen_link"></a>
 				</div>
 				<div class="col">
 					<h5 class="lead"><strong>Nombre:</strong> {{producto.nombre}}</h5>
 					<h5 class="lead"><strong>Descripción:</strong> {{producto.descripcion}}</h5>
 					<h5 class="lead"><strong>Precio:</strong> {{producto.precio}} C/U</h5><br>
-					<a href="{% url 'Productos:pedido' producto.id %}" class="btn btn-primary">Realizar Pedido</a>
-					<a href="{% url 'Productos:visualizar' %}" class="btn btn-secondary">Regresar</a>
+					<a href="{% url 'Restaurante:pedido' restaurante.id producto.id %}" class="btn btn-primary">Realizar Pedido</a>
+					<a href="{% url 'Restaurante:visualizar' restaurante.id %}" class="btn btn-secondary">Regresar</a>
 				</div>
 			</div>
 		</div>

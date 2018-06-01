@@ -7,8 +7,8 @@
 	
 	{% block contenido %}
 		<div class="container" align="center" style="padding-top: 50px">
-			<h1>Binevenido a la app the order</h1><br><br>
-			<a class="btn btn-primary" href="{% url 'Productos:visualizar' %}">Tomar Pedido</a>
+			<h1>Binevenido a la app the order -- Restaurante {{restaurante.nombre}}</h1><br><br>
+			<a class="btn btn-primary" href="{% url 'Restaurante:visualizar' restaurante.id %}">Tomar Pedido</a>
 		</div>
 	{% endblock contenido %}
 

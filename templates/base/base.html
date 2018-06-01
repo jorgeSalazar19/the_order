@@ -8,13 +8,13 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 	
 	<nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-	  <a class="navbar-brand text-white" href="/">The order</a>
+	  <a class="navbar-brand text-white" href="/">{{restaurante.nombre}}</a>
 	  <ul class="navbar-nav mr-auto">
 	  	<li class="nav-item">
-		  <a class="nav-link text-white" href="{% url 'Productos:visualizar' %}">Productos</a>
+		  <a class="nav-link text-white" href="{% url 'Restaurante:visualizar' restaurante.id %}">Productos</a>
 		</li>
 		<li class="nav-item">
-		  <a class="nav-link text-white" href="{% url 'Productos:pedidos' %}">Pedidos</a>
+		  <a class="nav-link text-white" href="{% url 'Restaurante:pedidos' restaurante.id %}">Pedidos</a>
 		</li>
 	  </ul>
 	</nav>

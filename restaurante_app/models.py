@@ -19,4 +19,12 @@ class Pedido(models.Model):
 	estado_pedido = models.CharField(max_length=50, default=None)
 
 	def __str__(self):
-		return "Pedido: " + self.tipo
+		return "Pedido: " + self.nombre_cliente
+
+class Restaurante(models.Model):
+	productos = models.ManyToManyField(Producto)
+	nombre = models.CharField(max_length=50)
+	logo = models.ImageField(upload_to="logos", null=True, blank=True, default=None)
+
+	def __str__(self):
+		return "Restaurante: " + self.nombre

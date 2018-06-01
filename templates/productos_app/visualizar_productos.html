@@ -14,20 +14,22 @@
 				{% for producto in productos  %}
 					<div class="row">
 						<div class="col">
-							<a title="imagen_link" href="{% url 'Productos:descripcion' producto.id %}"><img src="{{producto.imagen.url}}" alt="imagen_link" width="200" height="150"></a>
+							<a title="imagen_link" href="{% url 'Restaurante:descripcion' restaurante.id producto.id %}"><img src="{{producto.imagen.url}}" alt="imagen_link" width="200" height="150"></a>
 						</div>
 						<div class="col text-left">
 							<h5 class="lead"><strong>Nombre:</strong> {{producto.nombre}}</h5>
 							<h5 class="lead"><strong>Descripción:</strong> {{producto.descripcion}}</h5>
 							<h5 class="lead"><strong>Precio por unidad:</strong> {{producto.precio}}</h5><br>
-							<a href="{% url 'Productos:pedido' producto.id %}" class="btn btn-primary">Realizar Pedido</a>
+							<a href="{% url 'Restaurante:pedido' restaurante.id producto.id %}" class="btn btn-primary">Realizar Pedido</a>
 						</div>
 					</div><br><br><br>
 				{% endfor %}
 		{% else %}
-			<h4 class="lead">No tienes productos para mostrar</h4>
+			<h4 class="lead" align="center">No tienes productos para mostrar</h4>
 		{%endif%}
-		<a href="/" class="btn btn-secondary">Regresar</a><br><br>
+		<div align="center">
+			<a href="/" class="btn btn-secondary">Regresar</a>
+		</div><br><br>
 		</div><br><br>
 	{% endblock contenido %}
 
