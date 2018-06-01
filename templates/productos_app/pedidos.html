@@ -8,10 +8,10 @@
 	
 	
 	{% block contenido %}
-		<div class="container" style="width: 1000px" align="center">
+		<div class="container" style="width: 1100px" align="center">
 			<h1 align="center" style="padding-top: 30px">Pedidos Realizados hasta el momento</h1><br>
 			<table class="table" width="900px">
-			  <thead>
+			  <thead align="center">
 			    <tr>
 			      <th scope="col">Nombre Producto</th>
 			      <th scope="col">Precio Producto</th>
@@ -19,9 +19,10 @@
 			      <th scope="col">Tipo Pedido</th>
 			      <th scope="col">Cantidad Pedido</th>
 			      <th scope="col">Precio Pedido</th>
+			      <th scope="col">Estado Pedido</th>
 			    </tr>
 			  </thead>
-			  <tbody>
+			  <tbody align="center">
 			  {% for pedido in pedidos  %}
 			  	<tr>
 			      <td>{{pedido.producto.nombre}}</td>
@@ -30,6 +31,7 @@
 			      <td>{{pedido.tipo}}</td>
 			      <td>{{pedido.cantidad}}</td>
 			      <td>{{pedido.precio}}</td>
+			      <td>{{pedido.estado_pedido}}</td>
 			    </tr>  	
 			  {% endfor %}
 			  </tbody>

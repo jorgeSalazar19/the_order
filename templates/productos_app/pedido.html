@@ -19,7 +19,7 @@
 			<div class="container" align="left">
 				<form method="POST">{% csrf_token %}
 					<div class="form-group container" align="center" style="padding-top: 30px"><br>
-						<h1>Realizar tu pedido</h1><br>
+						<h1>Realizar tu pedido</h1><br><br>
 						<div class="row">
 							<div class="col" align="center">
 								<img src="{{producto.imagen.url}}" class="rounded" height="200">
@@ -32,9 +32,9 @@
 								<label for="nombre_id">Precio Producto</label>
 								<input class="form-control" type="text" value="c/u {{producto.precio}}" readonly><br>
 								<label for="nombre_id">Nombre Cliente</label>
-								<input class="form-control" type="text" name="nombre_cliente" placeholder="nombre cliente"><br>
+								<input class="form-control" type="text" name="nombre_cliente" placeholder="nombre cliente" required><br>
 								<label for="nombre_id">Cantidad Producto</label>
-								<input class="form-control" type="number" name="cantidad" required placeholder="cantidad"><br>
+								<input class="form-control" type="number" name="cantidad" required placeholder="cantidad" min="1"><br>
 								<input value="{{producto.id}}" hidden name="id_producto">
 								<label for="nombre_id">Tipo Pedido</label>
 								<select class="form-control" name="tipo">
@@ -49,6 +49,6 @@
 						</div>
 					</div>
 				</form>
-			</div>	
+			</div><br><br>	
 		{% endif %}
 	{% endblock contenido %}

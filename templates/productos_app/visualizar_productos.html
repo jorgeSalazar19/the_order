@@ -14,7 +14,7 @@
 				{% for producto in productos  %}
 					<div class="row">
 						<div class="col">
-							<a title="imagen_link" href="{% url 'Productos:descripcion' producto.id %}"><img src="{{producto.imagen.url}}" alt="imagen_link"></a>
+							<a title="imagen_link" href="{% url 'Productos:descripcion' producto.id %}"><img src="{{producto.imagen.url}}" alt="imagen_link" width="200" height="150"></a>
 						</div>
 						<div class="col text-left">
 							<h5 class="lead">Nombre: {{producto.nombre}}</h5>
@@ -22,12 +22,12 @@
 							<h5 class="lead">Precio por unidad: {{producto.precio}}</h5><br>
 							<a href="{% url 'Productos:pedido' producto.id %}" class="btn btn-primary">Realizar Pedido</a>
 						</div>
-					</div><br><br>
+					</div><br><br><br>
 				{% endfor %}
 		{% else %}
 			<h4 class="lead">No tienes productos para mostrar</h4>
 		{%endif%}
 		<a href="/" class="btn btn-secondary">Regresar</a><br><br>
-		</div>
+		</div><br><br>
 	{% endblock contenido %}
 

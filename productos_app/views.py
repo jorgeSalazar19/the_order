@@ -43,7 +43,7 @@ def RealizarPedido(request, id_producto):
         tipo = request.POST.get('tipo')
         observaciones = request.POST.get('observaciones')
         nombre = request.POST.get('nombre_cliente')
-        pedido = Pedido(producto_id=id_producto,nombre_cliente=nombre, cantidad=cantidad , tipo=tipo, observacion=observaciones, precio=(int(producto.precio) * int(cantidad)))
+        pedido = Pedido(producto_id=id_producto,nombre_cliente=nombre, cantidad=cantidad , tipo=tipo, observacion=observaciones, precio=(int(producto.precio) * int(cantidad)) , estado_pedido='En espera')
         pedido.save()
         ctx = {
         'flag': flag_done,

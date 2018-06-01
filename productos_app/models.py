@@ -16,6 +16,7 @@ class Pedido(models.Model):
 	observacion = models.CharField(max_length=200)
 	tipo = models.CharField(max_length=50)
 	precio = models.BigIntegerField(default=0)
+	estado_pedido = models.CharField(max_length=50, default=None)
 
 	def __str__(self):
 		return "Pedido: " + self.tipo
