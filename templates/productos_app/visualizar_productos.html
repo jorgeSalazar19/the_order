@@ -17,9 +17,9 @@
 							<a title="imagen_link" href="{% url 'Productos:descripcion' producto.id %}"><img src="{{producto.imagen.url}}" alt="imagen_link" width="200" height="150"></a>
 						</div>
 						<div class="col text-left">
-							<h5 class="lead">Nombre: {{producto.nombre}}</h5>
-							<h5 class="lead">Descripción: {{producto.descripcion}}</h5>
-							<h5 class="lead">Precio por unidad: {{producto.precio}}</h5><br>
+							<h5 class="lead"><strong>Nombre:</strong> {{producto.nombre}}</h5>
+							<h5 class="lead"><strong>Descripción:</strong> {{producto.descripcion}}</h5>
+							<h5 class="lead"><strong>Precio por unidad:</strong> {{producto.precio}}</h5><br>
 							<a href="{% url 'Productos:pedido' producto.id %}" class="btn btn-primary">Realizar Pedido</a>
 						</div>
 					</div><br><br><br>
